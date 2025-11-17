@@ -1,0 +1,19 @@
+//move values 1 place left
+#include <stdio.h>
+void fun(int*,int*,int*)
+int main()
+
+{
+int a=5,b=10,c=15;
+fun(&a,&b,&c);
+printf("a=%d b=%d c=%d",a,b,c);
+return0;
+}
+void fun(int*x,int*y,int*z)
+{
+int t;
+t=*x;
+*x=*y;
+*y=*z;
+*z=t;
+}

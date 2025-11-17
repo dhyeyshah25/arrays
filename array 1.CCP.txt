@@ -1,0 +1,17 @@
+//swap even odd places
+#include <stdio.h>
+int main()
+{
+    int num[10]={10, 5, 20 ,15 ,30, 25 ,40, 35 ,50, 45};
+   // printf("Enter ten random numbers:");
+  //  scanf("%d",num[10]);
+    int i,t;
+    for(i=0;i<9;i+=2)
+    {
+        t=num[i];
+        num[i]=num[i+1];
+        num[i+1]=t;
+    }
+    for(i=0;i<=9;i++)
+    printf("%d\n",num[i]);
+}

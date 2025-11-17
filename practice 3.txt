@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+int gcd(int x, int y)
+{
+    while (y != 0)
+    {
+        int temp = y;
+        y = x % y;
+        x = temp;
+    }
+    return x;
+}
+
+int main()
+{
+    int a, b, i;
+    int sum = 0, sum2 = 0, finalsum = 0;
+
+    printf("Enter any two numbers: ");
+    scanf("%d %d", &a, &b);
+
+    int lcm = (a * b) / gcd(a, b);
+
+    // Sum of numbers divisible by a or b
+    for (i = 1; i <= 100; i++)
+    {
+        if (i % a == 0 || i % b == 0)
+            sum += i;
+    }
+
+    // Sum of numbers divisible by both (LCM)
+    for (i = 1; i <= 100; i++)
+    {
+        if (i % lcm == 0)
+            sum2 += i;
+    }
+
+    finalsum = sum - sum2;   // Inclusion–exclusion
+
+    printf("Sum of all numbers ≤100 divisible by %d or %d = %d\n", a, b, finalsum);
+
+    return 0;
+}

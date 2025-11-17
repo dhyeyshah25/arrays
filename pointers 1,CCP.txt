@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<math.h>
+
+void powfact(float,int,int,float*,int*);
+int main()
+
+{
+	float a;
+	int b,number,factorial;
+	float pow;
+	printf("Enter a and b ");
+	scanf("%f %d",&a,&b);
+	printf("Enter a number whose factorial is to be calclulated");
+	scanf("%d",&number);
+	powfact(a,b,number,&pow,&factorial);
+	printf("power=%f\nfactorial=%d",pow,factorial);
+	return 0;
+}
+void powfact(float x , int y , int num , float*power , int*fact)
+{
+    
+    *power=pow(x,y);
+float res=1;
+int i;
+for(i=1;i<=num;i++)
+res=res*i;
+*fact=res;
+}

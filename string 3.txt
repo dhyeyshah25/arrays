@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main()
+{
+    char str[1000];
+    int i, j;
+    char t;
+
+    printf("Enter a string: ");
+    //scanf("%s", str);    
+    fgets(str,150,stdin);
+
+    // Sorting the string alphabetically
+    for(i = 0; str[i] != '\0'; i++)
+    {
+        for(j = i + 1; str[j] != '\0'; j++)
+        {
+            if(str[i] > str[j])
+            {
+                t = str[i];
+                str[i] = str[j];
+                str[j] = t;
+            }
+        }
+    }
+
+    printf("Alphabetically sorted string: %s\n", str);
+
+    return 0;
+}
